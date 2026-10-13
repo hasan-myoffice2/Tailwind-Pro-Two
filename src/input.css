@@ -1,0 +1,28 @@
+/* DM Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* import */
+@import "tailwindcss";
+
+@theme {
+   /* Text Color */
+   --text-headerFs: clamp(1.8rem, 1.5rem + 2vw, 3.8rem);
+   --text-headerFs: 70px;
+   --text-primaryFs: 32px;
+   --text-PeraFs: 16px;
+   /* Font Color */
+   --color-priColor: #1e2022;
+   --color-secoColor: #282b2d;
+   --color-activeColor: #03a9f5;
+   --color-cardBG: #e0e0e0;
+   /* Footer Color */
+   --color-footerBG: #1F1F1F;
+   --color-fooText: #ffffffa6;
+   --color-fooHover: #fff;
+   /* Font */
+   --font-Poppints: "Poppins", sans-serif;
+   /* Shadow */
+   --shadow-cardShadow: 5px 5px 22px #d0d0d0,
+      -5px -5px 22px #f0f0f0;
+}
