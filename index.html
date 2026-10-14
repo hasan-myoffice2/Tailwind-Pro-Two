@@ -11,13 +11,14 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
    <!-- Tailwind CSS Link -->
    <link rel="stylesheet" href="./src/output.css">
+   <!-- FontAwesome Icons CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
    <!-- header start -->
-   <div class="bg-[#F5F5F5] border-b border-gray-200 py-2 lg:py-2 px-4 text-sm text-gray-600">
+   <div class="bg-[#F5F5F5] border-b border-gray-200 py-2 lg:py-2 px-4 z-1 text-sm text-gray-600">
       <div class="flex items-center justify-between">
-
          <!-- Left Side: Contact Info -->
          <div class="flex flex-wrap items-center lg:gap-6 gap-2">
             <!-- Phone -->
@@ -44,7 +45,6 @@
                <span class="font-medium font-DmSans hidden lg:block">plancodedeploy@gmail.com</span>
             </a>
          </div>
-
          <!-- Right Side: Account, Wishlist, Selectors -->
          <div class="flex items-center lg:gap-6 gap-2">
             <!-- Account Dropdown -->
@@ -56,7 +56,7 @@
                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                </svg>
-               <div class="w-64 absolute top-10 rounded-xl bg-white p-4 shadow-cardShadow hidden" id="profileCard">
+               <div class="w-64 absolute top-10 z-50 rounded-xl bg-white p-4 shadow-cardShadow hidden" id="profileCard">
                   <!-- User Profile Section -->
                   <div class="flex items-center gap-3 pb-4 border-b border-gray-100">
                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Nancy Miller"
@@ -72,8 +72,7 @@
                      <a href="#orders" class="rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50 transition-colors">
                         Order List
                      </a>
-                     <a href="#logout"
-                        class="rounded-lg px-3 py-2 text-sky-500 hover:bg-sky-50 transition-colors font-medium">
+                     <a href="#logout" class="rounded-lg px-3 py-2 text-sky-500 transition-colors font-medium">
                         Log Out
                      </a>
                   </nav>
@@ -106,10 +105,353 @@
                <option>€ JPY</option>
             </select>
          </div>
-
       </div>
    </div>
    <!-- header end -->
+
+   <!-- Navabr Start -->
+   <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-40 py-4">
+      <nav class="px-4 sm:px-6 lg:px-8">
+         <div class="flex items-center justify-between h-20">
+            <!-- 1. LEFT SIDE: Off-Canvas Trigger Icon & Logo -->
+            <div class="flex items-center space-x-4 shrink-0">
+               <!-- Off-canvas Hamburger Button -->
+               <button id="openSidebar" class="p-2 text-sky-500 hover:text-sky-600 focus:outline-none transition">
+                  <i class="fa-solid fa-bars text-2xl"></i>
+               </button>
+               <!-- Divider Line -->
+               <div class="h-6 w-px bg-gray-200 hidden sm:block"></div>
+               <!-- Logo -->
+               <a href="#" class="lg:w-40 w-30">
+                  <img src="./image/brandLogo.png" alt="brandLogo">
+               </a>
+            </div>
+
+            <!-- 2. MIDDLE: Nav Menu Items (Centered on Desktop) -->
+            <div class="hidden lg:flex items-center justify-center space-x-8 text-sm font-semibold text-gray-700">
+               <!-- Home Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="text-sky-500 flex items-center space-x-1 hover:text-sky-600">
+                     <span>HOME</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-55 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Home 01</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Home 02</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Home 03</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Home 04</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Admin Dashboard</a>
+                  </div>
+               </div>
+               <!-- Pages Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>PAGES</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">About US</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Contacts</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Help / FAQ</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Products Comparison</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Order Tracking</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Order Tracking Details</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Search Results</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">404 Not Fount</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Comeing Soon</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Newslatter</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Privacy Policy</a>
+                  </div>
+               </div>
+               <!-- Accounts Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>ACCOUNT</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">login / Register</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Password Recovery</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Order List</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Wishlist</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Portfolio Page</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Contact / Shipping
+                        Adderess</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">My Tekets</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Single Ticket</a>
+                  </div>
+               </div>
+               <!-- Blog Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>BLOG</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Blog Grid</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Blog List Right</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Blog List Left</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Blog Full Width</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Blog Post</a>
+                  </div>
+               </div>
+               <!-- Shop Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>SHOP</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Shop Category</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Product Grid</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Product List</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Product Theree Column</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Product Fure Column</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Product Details</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Shop Card</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-sky-500">Shop Checkout +</a>
+                  </div>
+               </div>
+               <!-- Mega Menu Dropdown -->
+               <div class="group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>MEGA MENU</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div class="absolute left-0 w-full top-22">
+                     <div
+                        class="shadow-cardShadow bg-white font-normal tracking-wider text-navPeraColor text-PeraFs hidden group-hover:block w-full rounded-md border border-gray-100 p-4 z-50">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                           <!-- Column 1 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">CATEGORIES
+                                 01</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Accordions</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Alert</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Blockquote</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> Button</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Call To Action</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Carousel Slider</a>
+                           </div>
+
+                           <!-- Column 2 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">CATEGORIES
+                                 02</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Count Down</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Counters</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Dropcaps</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> Foems</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Form Elements</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Font Icons</a>
+                           </div>
+
+                           <!-- Column 3 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">CATEGORIES
+                                 03</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Grid System</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Heightlight</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Icno With Text</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> List Style</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Media Object</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Modal</a>
+                           </div>
+
+                           <!-- Column 4 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold text-[#232323] mb-8 rounded mt-5 hover:text-sky-500 transition-colors">CURRENT
+                                 OFFER</a>
+                              <div>
+                                 <img class="w-full" src="./image/offer.png" alt="">
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Elements Dropdown -->
+               <div class="group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>ELEMENTS</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div class="absolute left-0 w-full top-22">
+                     <div
+                        class="shadow-cardShadow bg-white font-normal tracking-wider text-navPeraColor text-PeraFs hidden group-hover:block w-full rounded-md border border-gray-100 p-4 z-50">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                           <!-- Column 1 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">Elements
+                                 01</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Accordions</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Alert</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Blockquote</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> Button</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Call To Action</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Carousel Slider</a>
+                           </div>
+
+                           <!-- Column 2 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">Elements
+                                 02</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Count Down</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Counters</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Dropcaps</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> Foems</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Form Elements</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Font Icons</a>
+                           </div>
+
+                           <!-- Column 3 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">Elements
+                                 03</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Grid System</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Heightlight</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Icno With Text</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> List Style</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Media Object</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Modal</a>
+                           </div>
+
+                           <!-- Column 4 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-sky-500 transition-colors">Elements
+                                 04</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Pagination</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Proggres Bars</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Tables</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-link me-1"></i> Tabs</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Typography</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-sky-500 transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Vidios</a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+
+            <!-- 3. RIGHT SIDE: Cart & Search Icons -->
+            <div class="flex items-center text-navPeraColor space-x-5 shrink-0">
+               <!-- Cart Icon with Badge -->
+               <a href="#" class="relative text-gray-800 hover:text-sky-500 transition">
+                  <i class="fa-solid fa-bag-shopping text-3xl"></i>
+                  <span
+                     class="absolute -top-1 -right-2 bg-sky-500 text-white text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">
+                     3
+                  </span>
+               </a>
+
+               <!-- Search Icon -->
+               <button class=" hover:text-sky-500 transition">
+                  <i class="fa-solid fa-magnifying-glass text-3xl"></i>
+               </button>
+            </div>
+            <div class="lg:hidden block">
+               <i class="fa-solid fa-bars text-2xl"></i>
+            </div>
+         </div>
+      </nav>
+   </header>
+   <!-- Navbar End -->
+
+   <!-- OFF-CANVAS SIDEBAR (LEFT DRAW) -->
+   <!-- Overlay Background -->
+   <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity duration-300"></div>
+   <!-- Sidebar Drawer -->
+   <aside id="offCanvasSidebar"
+      class="fixed top-0 left-0 w-80 h-full bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+      <!-- Sidebar Header -->
+      <div class="flex items-center justify-between p-5 border-b border-gray-200">
+         <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-bag-shopping text-2xl text-sky-500"></i>
+            <span class="font-extrabold text-lg text-gray-900">SMART SHOP</span>
+         </div>
+         <button id="closeSidebar" class="text-gray-500 hover:text-red-500 text-2xl focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+         </button>
+      </div>
+
+      <!-- Sidebar Menu Links -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-4 text-gray-800 font-semibold">
+         <a href="#" class="block py-2 border-b border-gray-100 text-sky-500">Home</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Pages</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Account</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Mega Menu</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Blog</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Shop</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-sky-500">Elements</a>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="p-5 border-t border-gray-200 text-xs text-gray-500 text-center">
+         © 2026 Smart Shop. All rights reserved.
+      </div>
+   </aside>
+   <!-- End -->
 
    <script>
       const profileIcon = document.getElementById('profileIcon');
@@ -121,6 +463,27 @@
             profileCard.style.display = 'block'
          }
       })
+   </script>
+
+   <script>
+      const openBtn = document.getElementById('openSidebar');
+      const closeBtn = document.getElementById('closeSidebar');
+      const sidebar = document.getElementById('offCanvasSidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      function openCanvas() {
+         sidebar.classList.remove('-translate-x-full');
+         overlay.classList.remove('hidden');
+      }
+
+      function closeCanvas() {
+         sidebar.classList.add('-translate-x-full');
+         overlay.classList.add('hidden');
+      }
+
+      openBtn.addEventListener('click', openCanvas);
+      closeBtn.addEventListener('click', closeCanvas);
+      overlay.addEventListener('click', closeCanvas);
    </script>
 
 </body>
