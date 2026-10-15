@@ -23,8 +23,31 @@
    --color-fooHover: #fff;
    /* Font */
    --font-Poppints: "Poppins", sans-serif;
+   --font-playball: "Playball", cursive;
    --font-DmSans: "DM Sans", sans-serif;
    /* Shadow */
    --shadow-cardShadow: 5px 5px 22px #d0d0d0,
       -5px -5px 22px #f0f0f0;
+}
+
+.heroSwiper .swiper-slide img {
+   transition:
+      opacity 1.2s ease,
+      transform 1.2s ease;
+}
+
+.heroSwiper .swiper-slide-active img {
+   animation: slideUpFade 1.2s ease both;
+}
+
+@keyframes slideUpFade {
+   from {
+      opacity: 0.5;
+      transform: translateY(25px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
 }

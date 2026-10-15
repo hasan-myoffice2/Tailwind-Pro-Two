@@ -453,6 +453,93 @@
    </aside>
    <!-- End -->
 
+   <!-- Hero Slider Start-->
+   <section class="">
+      <div class="swiper heroSwiper">
+         <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide relative">
+               <img class="w-full lg:h-170 h-135 object-cover" src="./image/slide-1.png" alt="">
+               <div class="heroTitle absolute lg:top-45 top-20 left-10 lg:left-80">
+                  <h2 class="font-playball text-3xl lg:text-5xl text-activeColor tracking-widest">Stylish Look</h2>
+                  <h1
+                     class="mt-10 text-priColor mb-10 lg:text-[72px] text-[55px] font-Poppints font-semibold leading-16 lg:leading-22">
+                     The Trends <br class="hidden lg:block">Of The Season</h1>
+                  <button
+                     class="py-3 px-5 uppercase bg-activeColor transition-all hover:bg-transparent border-2 border-activeColor hover:text-activeColor text-white font-semibold rounded-md">Shop
+                     Now</button>
+               </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide relative">
+               <img class="w-full lg:h-170 h-135 object-cover" src="./image/slide-02.jpg" alt="">
+               <div class="heroTitle absolute lg:top-45 top-20 left-10 lg:left-80">
+                  <h2 class="font-playball text-3xl lg:text-5xl text-activeColor tracking-widest">We Parents</h2>
+                  <h1
+                     class="mt-10 text-priColor mb-10 lg:text-[72px] text-[55px] font-Poppints font-semibold leading-16 lg:leading-22">
+                     New Collection <br class="hidden lg:block">From Paris</h1>
+                  <button
+                     class="py-3 px-5 uppercase bg-activeColor transition-all hover:bg-transparent border-2 border-activeColor hover:text-activeColor text-white font-semibold rounded-md">Shop
+                     Now</button>
+               </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide relative">
+               <img class="w-full lg:h-170 h-135 object-cover" src="./image/slide-03.jpg" alt="">
+               <div class="heroTitle absolute lg:top-45 top-20 left-10 lg:left-80">
+                  <h2 class="font-playball text-3xl lg:text-5xl text-activeColor tracking-widest">It has finally started
+                  </h2>
+                  <h1
+                     class="mt-10 text-priColor mb-10 lg:text-[72px] text-[55px] font-Poppints font-semibold leading-16 lg:leading-22">
+                     This Season <br class="hidden lg:block">25% Off</h1>
+                  <button
+                     class="py-3 px-5 uppercase bg-activeColor transition-all hover:bg-transparent border-2 border-activeColor hover:text-activeColor text-white font-semibold rounded-md">Shop
+                     Now</button>
+               </div>
+            </div>
+         </div>
+         <!-- Previous Button -->
+         <div class="btnGroup">
+            <button
+               class="hero-prev absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-priColor transition hover:bg-activeColor shadow-cardShadow hover:text-white md:left-5"
+               aria-label="Previous slide">
+               <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <!-- Next Button -->
+            <button
+               class="hero-next absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-priColor transition hover:bg-activeColor shadow-cardShadow hover:text-white md:right-5"
+               aria-label="Next slide">
+               <i class="fa-solid fa-chevron-right"></i>
+            </button>
+         </div>
+      </div>
+   </section>
+   <!-- Hero Slider End-->
+
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <script>
+      const heroSwiper = new Swiper(".heroSwiper", {
+         loop: true,
+         effect: "fade",
+         speed: 1500,
+
+         fadeEffect: {
+            crossFade: true,
+         },
+
+         autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+         },
+
+         navigation: {
+            nextEl: ".hero-next",
+            prevEl: ".hero-prev",
+         },
+      });
+   </script>
+
    <script>
       const profileIcon = document.getElementById('profileIcon');
       const profileCard = document.getElementById('profileCard');
