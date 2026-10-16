@@ -608,7 +608,7 @@
    <!-- Man & Woman End -->
 
    <!-- Support Section -->
-   <section class="mb-25 px-4 bg-white">
+   <section class="px-4 bg-white">
       <div class="max-w-7xl mx-auto">
          <!-- Grid Container -->
          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -651,6 +651,48 @@
    </section>
    <!-- Support End -->
 
+   <!-- Product Banner -->
+   <section class="py-25">
+      <div class="relative">
+         <img class="h-125 object-cover w-full" src="./image/product-banner-04.jpg" alt="">
+         <div class="absolute top-15 lg:left-[40%] left-5 px-4 py-14 text-center">
+            <!-- Title -->
+            <div class="mb-12">
+               <p class="text-base mb-2 font-DmSans font-semibold text-activeColor">
+                  Get <span class="text-red-500">70% off</span> to your order
+               </p>
+               <h2 class="font-semibold text-primaryFs font-Poppints text-priColor text-3xl">
+                  Limited Time Offer!
+               </h2>
+            </div>
+            <!-- Countdown -->
+            <div id="countdown" class="mx-auto mb-12 grid max-w-lg grid-cols-4 gap-4 font-DmSans">
+               <div>
+                  <h3 id="days" class="text-primaryFs font-semibold text-priColor sm:text-4xl">00</h3>
+                  <p class="mt-1 text-xs text-[#374151]">DAYS</p>
+               </div>
+               <div>
+                  <h3 id="hours" class="text-primaryFs font-semibold text-priColor sm:text-4xl">00</h3>
+                  <p class="mt-1 text-xs text-[#374151]">HOURS</p>
+               </div>
+               <div>
+                  <h3 id="minutes" class="text-primaryFs font-semibold text-priColor sm:text-4xl">00</h3>
+                  <p class="mt-1 text-xs text-[#374151]">MINUTES</p>
+               </div>
+               <div>
+                  <h3 id="seconds" class="text-primaryFs font-semibold text-priColor sm:text-4xl">00</h3>
+                  <p class="mt-1 text-xs text-[#374151]">SECONDS</p>
+               </div>
+            </div>
+            <!-- Button -->
+            <button
+               class="py-2 px-5 uppercase bg-activeColor transition-all border-2 border-activeColor hover:text-activeColor text-white hover:bg-white font-semibold rounded-sm">Shop
+               Now</button>
+         </div>
+      </div>
+   </section>
+   <!-- Product End -->
+
    <!-- Swiper JS -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
@@ -675,6 +717,38 @@
             prevEl: ".hero-prev",
          },
       });
+   </script>
+   <!-- coundown script -->
+   <script>
+      // Countdown end date
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 1000);
+      endDate.setHours(8, 49, 39, 0);
+
+      function updateCountdown() {
+         const now = new Date();
+         const difference = endDate - now;
+
+         if (difference <= 0) {
+            document.getElementById("countdown").innerHTML =
+               '<p class="col-span-4 text-lg font-semibold">Offer has ended!</p>';
+            clearInterval(timer);
+            return;
+         }
+
+         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+         const minutes = Math.floor((difference / (1000 * 60)) % 60);
+         const seconds = Math.floor((difference / 1000) % 60);
+
+         document.getElementById("days").textContent = String(days).padStart(2, "0");
+         document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+         document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+         document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+      }
+
+      updateCountdown();
+      const timer = setInterval(updateCountdown, 1000);
    </script>
 
    <script>
