@@ -693,6 +693,142 @@
    </section>
    <!-- Product End -->
 
+   <!-- Featured Product Section -->
+   <section class="mb-25 px-4 lg:px-0">
+
+      <!-- Product Title -->
+      <h2 class="mb-10 text-center text-primaryFs font-bold text-priColor">
+         Featured Products
+      </h2>
+      <!-- Products -->
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+         <!-- Product 1 -->
+         <div class="productCard group relative text-center text-priColor">
+
+            <img src="./image/product-01.jpg" alt="Women's Winter Coat"
+               class="h-80 w-full bg-gray-100 object-contain sm:h-72 lg:h-96">
+
+            <!-- Product Title -->
+            <div class="productTitle transition-all duration-300 group-hover:opacity-0">
+               <h3 class="mt-5 font-Poppints font-semibold">
+                  Floral Fit and Flare Dress
+               </h3>
+
+               <p class="mt-1 font-bold text-gray-800">$21.10</p>
+            </div>
+
+            <!-- Add To Card -->
+            <div class="addToCard absolute bottom-0 left-0 flex w-full translate-y-3 items-center justify-between
+             bg-white p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+               <h3 class="text-PeraFs font-semibold font-Poppints">
+                  + Add To Card
+               </h3>
+               <ul class="flex items-center gap-4 text-PeraFs">
+                  <li><i class="fa-regular fa-heart"></i></li>
+                  <li><i class="fa-solid fa-maximize"></i></li>
+               </ul>
+            </div>
+
+         </div>
+         <!-- Product 2 -->
+         <div class="productCard group relative text-center text-priColor">
+
+            <img src="./image/product-02.jpg" alt="Women's Winter Coat"
+               class="h-80 w-full bg-gray-100 object-contain sm:h-72 lg:h-96">
+
+            <!-- Product Title -->
+            <div class="productTitle transition-all duration-300 group-hover:opacity-0">
+               <h3 class="mt-5 font-Poppints font-semibold">
+                  Slim Fit Formal Shirt
+               </h3>
+
+               <p class="mt-1 font-bold text-gray-800">$18.22</p>
+            </div>
+
+            <!-- Add To Card -->
+            <div class="addToCard absolute bottom-0 left-0 flex w-full translate-y-3 items-center justify-between
+             bg-white p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+               <h3 class="text-PeraFs font-semibold font-Poppints">
+                  + Add To Card
+               </h3>
+               <ul class="flex items-center gap-4 text-PeraFs">
+                  <li><i class="fa-regular fa-heart"></i></li>
+                  <li><i class="fa-solid fa-maximize"></i></li>
+               </ul>
+            </div>
+
+         </div>
+
+         <!-- Product 3 -->
+         <div class="productCard group relative text-center text-priColor">
+
+            <img src="./image/product-03.jpg" alt="Women's Winter Coat"
+               class="h-80 w-full bg-gray-100 object-contain sm:h-72 lg:h-96">
+
+            <!-- Product Title -->
+            <div class="productTitle transition-all duration-300 group-hover:opacity-0">
+               <h3 class="mt-5 font-Poppints font-semibold">
+                  Women's Winter Coat
+               </h3>
+
+               <p class="mt-1 font-bold text-gray-800">$25.40</p>
+            </div>
+
+            <!-- Add To Card -->
+            <div class="addToCard absolute bottom-0 left-0 flex w-full translate-y-3 items-center justify-between
+             bg-white p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+               <h3 class="text-PeraFs font-semibold font-Poppints">
+                  + Add To Card
+               </h3>
+               <ul class="flex items-center gap-4 text-PeraFs">
+                  <li><i class="fa-regular fa-heart"></i></li>
+                  <li><i class="fa-solid fa-maximize"></i></li>
+               </ul>
+            </div>
+
+         </div>
+
+         <!-- Product 4 -->
+         <div class="productCard group relative text-center text-priColor">
+
+            <img src="./image/product-04.jpg" alt="Women's Winter Coat"
+               class="h-80 w-full bg-gray-100 object-contain sm:h-72 lg:h-96">
+
+            <!-- Product Title -->
+            <div class="productTitle transition-all duration-300 group-hover:opacity-0">
+               <h3 class="mt-5 font-Poppints font-semibold">
+                  Fit Stretchable Jeans
+               </h3>
+
+               <p class="mt-1 font-bold text-gray-800">$14.90</p>
+            </div>
+
+            <!-- Add To Card -->
+            <div class="addToCard absolute bottom-0 left-0 flex w-full translate-y-3 items-center justify-between
+             bg-white p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+               <h3 class="text-PeraFs font-semibold font-Poppints">
+                  + Add To Card
+               </h3>
+               <ul class="flex items-center gap-4 text-PeraFs">
+                  <li><i class="fa-regular fa-heart"></i></li>
+                  <li><i class="fa-solid fa-maximize"></i></li>
+               </ul>
+            </div>
+
+         </div>
+
+      </div>
+
+      <!-- Slider Dots -->
+      <div class="mt-10 flex justify-center gap-3">
+         <button aria-label="Go to slide 1" class="h-2.5 w-2.5 rounded-full bg-gray-300"></button>
+
+         <button aria-label="Go to slide 2" class="h-2.5 w-2.5 rounded-full bg-sky-500"></button>
+      </div>
+
+   </section>
+   <!-- Featured Product End -->
+
    <!-- Swiper JS -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
@@ -751,6 +887,30 @@
       const timer = setInterval(updateCountdown, 1000);
    </script>
 
+   <!-- Featured Script -->
+   <script>
+      const swiper = new Swiper(".productSwiper", {
+         slidesPerView: 1,
+         spaceBetween: 24,
+         loop: false,
+         watchOverflow: true,
+
+         pagination: {
+            el: ".productSwiper .swiper-pagination",
+            clickable: true,
+         },
+
+         breakpoints: {
+            640: {
+               slidesPerView: 2,
+            },
+            1024: {
+               slidesPerView: 4,
+            },
+         },
+      });
+   </script>
+
    <script>
       const profileIcon = document.getElementById('profileIcon');
       const profileCard = document.getElementById('profileCard');
@@ -783,6 +943,8 @@
       closeBtn.addEventListener('click', closeCanvas);
       overlay.addEventListener('click', closeCanvas);
    </script>
+
+
 
 </body>
 
