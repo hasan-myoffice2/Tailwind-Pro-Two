@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>smartShop | web</title>
    <!-- Swiper JS CDN Link -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
    <!-- Bootstrap Icons Link-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
    <!-- Tailwind CSS Link -->
@@ -581,8 +581,8 @@
          <div class="relative">
             <img class="object-cover w-full h-50 lg:h-65" src="./image/product-banner-02.jpg" alt="productBannaer">
             <div class="absolute lg:top-[20%] lg:left-10 top-9 left-7">
-               <h2 class="font-Poppints text-[22px] lg:text-[28px] text-priColor font-semibold">Men's Fashion</h2>
-               <h3 class="font-Poppints mb-5 lg:mb-8 text-[22px] lg:text-[28px] text-activeColor font-semibold">-
+               <h2 class="font-Poppints text-secoFS lg:text-[28px] text-priColor font-semibold">Men's Fashion</h2>
+               <h3 class="font-Poppints mb-5 lg:mb-8 text-secoFS lg:text-[28px] text-activeColor font-semibold">-
                   Collection
                </h3>
                <button
@@ -594,8 +594,8 @@
          <div class="relative">
             <img class="object-cover w-full h-50 lg:h-65" src="./image/product-banner-01.jpg" alt="productBannaer">
             <div class="absolute lg:top-[20%] lg:left-10 top-9 left-7">
-               <h2 class="font-Poppints text-[22px] lg:text-[28px] text-priColor font-semibold">Woman's Fashion</h2>
-               <h3 class="font-Poppints mb-5 lg:mb-8 text-[22px] lg:text-[28px] text-activeColor font-semibold">-
+               <h2 class="font-Poppints text-secoFS lg:text-[28px] text-priColor font-semibold">Woman's Fashion</h2>
+               <h3 class="font-Poppints mb-5 lg:mb-8 text-secoFS lg:text-[28px] text-activeColor font-semibold">-
                   Collection
                </h3>
                <button
@@ -1002,6 +1002,38 @@
    </section>
    <!-- Latest News End -->
 
+   <!-- Company Logo Slider -->
+   <section class="bg-gray-100">
+      <div class="swiper logoSwiper mx-auto max-w-7xl">
+         <div class="swiper-wrapper items-center py-12">
+
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-02.png" alt="Poyosis" class="h-10 w-full object-contain grayscale">
+            </div>
+
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-03.png" alt="Dolise" class="h-10 w-full object-contain grayscale">
+            </div>
+
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-03.png" alt="Kavore" class="h-10 w-full object-contain grayscale">
+            </div>
+
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-04.png" alt="Skazzy" class="h-10 w-full object-contain grayscale">
+            </div>
+
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-05.png" alt="Insuler" class="h-10 w-full object-contain grayscale">
+            </div>
+            <div class="swiper-slide flex justify-center">
+               <img src="./image/client-06.png" alt="Insuler" class="h-10 w-full object-contain grayscale">
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Company Logo End -->
+
    <!-- Swiper JS -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
@@ -1117,6 +1149,29 @@
       overlay.addEventListener('click', closeCanvas);
    </script>
 
+   <script>
+
+      const logoSwiper = new Swiper(".logoSwiper", {
+         loop: true,
+         speed: 800,
+         spaceBetween: 30,
+         slidesPerView: 2,
+         autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+         },
+         breakpoints: {
+            640: {
+               slidesPerView: 3,
+               spaceBetween: 40,
+            },
+            1024: {
+               slidesPerView: 5,
+               spaceBetween: 50,
+            },
+         },
+      });
+   </script>
 
 
 </body>
