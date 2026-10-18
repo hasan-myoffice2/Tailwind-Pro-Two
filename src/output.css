@@ -540,6 +540,9 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-items-center {
+    justify-items: center;
+  }
   .gap-1 {
     gap: var(--spacing);
   }
@@ -672,6 +675,9 @@
   }
   .bg-\[\#1f1f1f\] {
     background-color: #1f1f1f;
+  }
+  .bg-\[\#191919\] {
+    background-color: #191919;
   }
   .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
@@ -1198,6 +1204,9 @@
     }
     .lg\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .lg\:justify-between {
+      justify-content: space-between;
     }
     .lg\:gap-6 {
       gap: calc(var(--spacing) * 6);
