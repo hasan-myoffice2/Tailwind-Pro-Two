@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>smartShop | web</title>
+   <!-- Swiper JS CDN Link -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <!-- Bootstrap Icons Link-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <!-- Tailwind CSS Link -->
+   <link rel="stylesheet" href="../src/output.css">
+   <!-- FontAwesome Icons CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+   <!-- header start -->
+   <div class="bg-[#F5F5F5] border-b border-gray-200 py-2 lg:py-2 px-4 z-1 text-peraFS text-gray-600">
+      <div class="flex items-center justify-between">
+         <!-- Left Side: Contact Info -->
+         <div class="flex flex-wrap items-center lg:gap-6 gap-2">
+            <!-- Phone -->
+            <a href="tel:+01744703580" class="flex items-center gap-2 hover:text-activeColor transition-colors">
+               <!-- Phone Icon SVG -->
+               <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                     d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+               </svg>
+               <span class="font-medium font-DmSans hidden lg:block">+01744703580</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:plancodedeploy@gmail.com"
+               class="flex items-center gap-2 hover:text-activeColor transition-colors">
+               <!-- Email Icon SVG -->
+               <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                  </path>
+               </svg>
+               <span class="font-medium font-DmSans hidden lg:block">plancodedeploy@gmail.com</span>
+            </a>
+         </div>
+         <!-- Right Side: Account, Wishlist, Selectors -->
+         <div class="flex items-center lg:gap-6 gap-2">
+            <!-- Account Dropdown -->
+            <div class="flex items-center gap-1 relative cursor-pointer hover:text-activeColor" id="profileIcon">
+               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+               </svg>
+               <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+               </svg>
+               <div class="w-64 absolute top-10 z-50 rounded-xl bg-white p-4 shadow-cardShadow hidden" id="profileCard">
+                  <!-- User Profile Section -->
+                  <div class="flex items-center gap-3 pb-4 border-b border-gray-100">
+                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Nancy Miller"
+                        class="h-12 w-12 rounded-full object-cover" />
+                     <span class="font-medium text-gray-800 text-lg">Nancy Miller</span>
+                  </div>
+
+                  <!-- Menu Links -->
+                  <nav class="flex flex-col pt-3 space-y-1">
+                     <a href="#profile" class="rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50 transition-colors">
+                        My Profile
+                     </a>
+                     <a href="#orders" class="rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50 transition-colors">
+                        Order List
+                     </a>
+                     <a href="#logout" class="rounded-lg px-3 py-2 text-activeColor transition-colors font-medium">
+                        Log Out
+                     </a>
+                  </nav>
+               </div>
+            </div>
+
+            <!-- Wishlist Icon -->
+            <a href="#" class="hover:text-activeColor transition-colors">
+               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                  </path>
+               </svg>
+            </a>
+
+            <!-- Language Selector -->
+            <select
+               class="bg-white border border-gray-300 rounded px-2 py-1 text-PeraFs focus:outline-none focus:border-activeColor cursor-pointer">
+               <option>English</option>
+               <option>Spanish</option>
+               <option>Italiano</option>
+            </select>
+
+            <!-- Currency Selector -->
+            <select
+               class="bg-white border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:border-activeColor cursor-pointer">
+               <option>$ USD</option>
+               <option>€ EUR</option>
+               <option>€ UKP</option>
+               <option>€ JPY</option>
+            </select>
+         </div>
+      </div>
+   </div>
+   <!-- header end -->
+
+   <!-- Navabr Start -->
+   <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-40 py-4">
+      <nav class="px-4 sm:px-6 lg:px-8">
+         <div class="flex items-center justify-between h-20">
+            <!-- 1. LEFT SIDE: Off-Canvas Trigger Icon & Logo -->
+            <div class="flex items-center space-x-4 shrink-0">
+               <!-- Off-canvas Hamburger Button -->
+               <button id="openSidebar" class="p-2 text-activeColor hover:text-sky-600 focus:outline-none transition">
+                  <i class="fa-solid fa-bars text-2xl"></i>
+               </button>
+               <!-- Divider Line -->
+               <div class="h-6 w-px bg-gray-200 hidden sm:block"></div>
+               <!-- Logo -->
+               <a href="#" class="lg:w-40 w-30">
+                  <img src="../image/brandLogo.png" alt="brandLogo">
+               </a>
+            </div>
+
+            <!-- 2. MIDDLE: Nav Menu Items (Centered on Desktop) -->
+            <div class="hidden lg:flex items-center justify-center space-x-8 text-sm font-semibold text-gray-700">
+               <!-- Home Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="text-activeColor flex items-center space-x-1 hover:text-sky-600">
+                     <span>HOME</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-55 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="../index.html" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Home 01</a>
+                     <a href="../index.html" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Home 02</a>
+                     <a href="../index.html" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Home 03</a>
+                     <a href="../index.html" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Home 04</a>
+                     <a href="../index.html" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Admin
+                        Dashboard</a>
+                  </div>
+               </div>
+               <!-- Pages Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>PAGES</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="../PagesFolder/about.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">About US</a>
+                     <a href="../PagesFolder/about.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Contacts</a>
+                     <a href="../PagesFolder/help-faq.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Help / FAQ</a>
+                     <a href="../PagesFolder/product-comparision.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Products Comparison</a>
+                     <a href="../PagesFolder/order-tracking.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Order Tracking</a>
+                     <a href="../PagesFolder/order-details.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Order Tracking
+                        Details</a>
+                     <a href="../PagesFolder/search-results.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Search Results</a>
+                     <a href="../PagesFolder/404.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">404 Not Fount</a>
+                     <a href="../PagesFolder/comeingsoon.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Comeing Soon</a>
+                     <a href="../PagesFolder/newslatter.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Newslatter</a>
+                     <a href="../PagesFolder/privacy-policy.html"
+                        class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Privacy Policy</a>
+                  </div>
+               </div>
+               <!-- Accounts Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>ACCOUNT</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">login / Register</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Password Recovery</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Order List</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Wishlist</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Portfolio Page</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Contact / Shipping
+                        Adderess</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">My Tekets</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Single Ticket</a>
+                  </div>
+               </div>
+               <!-- Blog Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>BLOG</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Blog Grid</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Blog List Right</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Blog List Left</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Blog Full Width</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Blog Post</a>
+                  </div>
+               </div>
+               <!-- Shop Dropdown -->
+               <div class="relative group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>SHOP</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div
+                     class="absolute font-normal tracking-wider text-navPeraColor left-0 text-PeraFs top-full hidden group-hover:block w-65 bg-white shadow-cardShadow rounded-md border border-gray-100 p-2 z-50">
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Shop Category</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Product Grid</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Product List</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Product Theree
+                        Column</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Product Fure Column</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Product Details</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Shop Card</a>
+                     <a href="#" class="block px-4 py-3 hover:bg-sky-50 hover:text-activeColor">Shop Checkout +</a>
+                  </div>
+               </div>
+               <!-- Mega Menu Dropdown -->
+               <div class="group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>MEGA MENU</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div class="absolute left-0 w-full top-22">
+                     <div
+                        class="shadow-cardShadow bg-white font-normal tracking-wider text-navPeraColor text-PeraFs hidden group-hover:block w-full rounded-md border border-gray-100 p-4 z-50">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                           <!-- Column 1 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">CATEGORIES
+                                 01</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Accordions</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Alert</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Blockquote</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> Button</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Call To Action</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Carousel Slider</a>
+                           </div>
+
+                           <!-- Column 2 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">CATEGORIES
+                                 02</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Count Down</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Counters</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Dropcaps</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> Foems</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Form Elements</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Font Icons</a>
+                           </div>
+
+                           <!-- Column 3 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">CATEGORIES
+                                 03</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Grid System</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Heightlight</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Icno With Text</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> List Style</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Media Object</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Modal</a>
+                           </div>
+
+                           <!-- Column 4 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold text-[#232323] mb-8 rounded mt-5 hover:text-activeColor transition-colors">CURRENT
+                                 OFFER</a>
+                              <div>
+                                 <img class="w-full" src="../image/offer.png" alt="">
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Elements Dropdown -->
+               <div class="group py-6 font-Poppints">
+                  <a href="#" class="flex items-center space-x-1 hover:text-sky-600">
+                     <span>ELEMENTS</span>
+                     <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                  </a>
+                  <div class="absolute left-0 w-full top-22">
+                     <div
+                        class="shadow-cardShadow bg-white font-normal tracking-wider text-navPeraColor text-PeraFs hidden group-hover:block w-full rounded-md border border-gray-100 p-4 z-50">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                           <!-- Column 1 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">Elements
+                                 01</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Accordions</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Alert</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Blockquote</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> Button</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Call To Action</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Carousel Slider</a>
+                           </div>
+
+                           <!-- Column 2 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">Elements
+                                 02</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Count Down</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Counters</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Dropcaps</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> Foems</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Form Elements</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Font Icons</a>
+                           </div>
+
+                           <!-- Column 3 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">Elements
+                                 03</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Grid System</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Heightlight</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Icno With Text</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> List Style</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Media Object</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Modal</a>
+                           </div>
+
+                           <!-- Column 4 -->
+                           <div class="flex flex-col space-y-1">
+                              <a href="#"
+                                 class="block uppercase font-semibold px-4 text-[#232323] mb-5 rounded mt-5 hover:text-activeColor transition-colors">Elements
+                                 04</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-sliders me-1"></i> Pagination</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-bell me-1"></i> Proggres Bars</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-blockquote-left me-1"></i> Tables</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-link me-1"></i> Tabs</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-grid me-1"></i></i> Typography</a>
+                              <a href="#" class="block px-4 py-2 rounded hover:text-activeColor transition-colors"><i
+                                    class="bi bi-image me-1"></i></i> Vidios</a>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+
+            <!-- 3. RIGHT SIDE: Cart & Search Icons -->
+            <div class="flex items-center text-navPeraColor space-x-5 shrink-0">
+               <!-- Cart Icon with Badge -->
+               <a href="#" class="relative text-gray-800 hover:text-activeColor transition">
+                  <i class="fa-solid fa-bag-shopping text-3xl"></i>
+                  <span
+                     class="absolute -top-1 -right-2 bg-actext-activeColor text-white text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">
+                     3
+                  </span>
+               </a>
+
+               <!-- Search Icon -->
+               <button class=" hover:text-activeColor transition">
+                  <i class="fa-solid fa-magnifying-glass text-3xl"></i>
+               </button>
+            </div>
+            <div class="lg:hidden block">
+               <i class="fa-solid fa-bars text-2xl"></i>
+            </div>
+         </div>
+      </nav>
+   </header>
+   <!-- Navbar End -->
+
+   <!-- OFF-CANVAS SIDEBAR (LEFT DRAW) -->
+   <!-- Overlay Background -->
+   <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity duration-300"></div>
+   <!-- Sidebar Drawer -->
+   <aside id="offCanvasSidebar"
+      class="fixed top-0 left-0 w-80 h-full bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+      <!-- Sidebar Header -->
+      <div class="flex items-center justify-between p-5 border-b border-gray-200">
+         <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-bag-shopping text-2xl text-activeColor"></i>
+            <span class="font-extrabold text-lg text-priColor font-Poppints">SMART SHOP</span>
+         </div>
+         <button id="closeSidebar" class="text-gray-500 hover:text-red-500 text-2xl focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+         </button>
+      </div>
+
+      <!-- Sidebar Menu Links -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-4 text-gray-800 font-semibold">
+         <a href="#" class="block py-2 border-b border-gray-100 text-activeColor">Home</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Pages</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Account</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Mega Menu</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Blog</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Shop</a>
+         <a href="#" class="block py-2 border-b border-gray-100 hover:text-activeColor">Elements</a>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="p-5 border-t border-gray-200 text-xs text-gray-500 text-center">
+         © 2026 Smart Shop. All rights reserved.
+      </div>
+   </aside>
+   <!-- End -->
+
+   <!-- Page Title Section -->
+   <section class="relative w-full font-Poppints bg-gray-100 overflow-hidden py-18 lg:py-25 px-6 sm:px-12 bg-cover
+    bg-right bg-no-repeat" style="background-image: url('../image/page-title.jpg');">
+      <!-- Content Container -->
+      <div class="relative max-w-7xl mx-auto flex flex-col items-start justify-center">
+         <h1 class="lg:text-primaryFs font-semibold text-priColor tracking-tight mb-4">Order Tracking</h1>
+         <div class="flex items-center space-x-3 text-sm sm:text-base font-medium text-gray-500 font-DmSans"
+            aria-label="Breadcrumb">
+            <a href="../index.html" class="hover:text-activeColor transition-colors text-PeraFs">Home</a>
+            <span class="text-gray-400 text-sm"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="text-activeColor text-PeraFs font-semibold">Order Tracking</span>
+         </div>
+      </div>
+   </section>
+   <!-- Page Title End -->
+
+   <!-- Tracking Section -->
+   <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+         <div class="border border-gray-400 p-10 rounded-lg">
+            <h1 class="text-primaryFs font-semibold text-priColor">Tracking your order</h1>
+            <p class="text-PeraFs font-DmSanss mt-1 text-[#575a7b] border-b border-gray-300 pb-5 mb-5">To track your
+               order please
+               enter your Order ID in the box below and press the "Order Track" button.</p>
+            <div>
+               <label class="font-DmSans font-medium text-[#575a7b]" for="order">Order ID</label>
+               <input
+                  class="w-full mb-8 border p-2 mt-2 border-gray-400 rounded-sm focus:border-activeColor focus:outline-none"
+                  type="text" placeholder="123 456 789">
+               <label class="font-DmSans font-medium text-[#575a7b] tracking-wide" for="order">Billing Email</label>
+               <input
+                  class="w-full mb-5 border p-2 mt-2 border-gray-400 rounded-sm focus:border-activeColor focus:outline-none"
+                  type="text" placeholder="Your Billing Email Hare">
+            </div>
+            <button class="bg-activeColor transition-all duration-300 hover:bg-transparent border border-activeColor hover:text-activeColor text-white text-PeraFs font-semibold
+                           px-6 py-2 rounded">Add To Cart</button>
+         </div>
+      </div>
+   </section>
+   <!-- Tracking End -->
+
+   <!-- Footer Section -->
+   <footer class="bg-footerBG text-fooText py-12">
+      <div class="max-w-7xl mx-auto px-5">
+
+         <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+
+            <!-- Logo & Contact -->
+            <div>
+               <a href="#" class="inline-flex items-center gap-3 mb-8">
+                  <img src="../image/logo-footer.png" alt="">
+               </a>
+
+               <div class="space-y-5 text-PeraFs sm:text-base">
+                  <p class="flex items-start gap-3">
+                     <i class="fa-solid fa-location-dot text-activeColor mt-1"></i>
+                     <span>74 Guild Street 542B, Great North Town MT.</span>
+                  </p>
+
+                  <p class="flex items-center gap-3">
+                     <i class="fa-solid fa-mobile-screen-button text-activeColor"></i>
+                     <a href="tel:+44123456789" class="hover:text-sky-400 transition-colors duration-300">
+                        (+44) 123 456 789
+                     </a>
+                  </p>
+
+                  <p class="flex items-center gap-3">
+                     <i class="fa-regular fa-envelope text-activeColor"></i>
+                     <a href="mailto:addyour@emailhere" class="hover:text-sky-400 transition-colors duration-300">
+                        addyour@emailhere
+                     </a>
+                  </p>
+               </div>
+
+               <!-- Social Links -->
+               <div class="flex gap-3 mt-7">
+                  <a href="#" aria-label="Facebook" class="social-link">
+                     <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter" class="social-link">
+                     <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#" aria-label="Instagram" class="social-link">
+                     <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="YouTube" class="social-link">
+                     <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="#" aria-label="LinkedIn" class="social-link">
+                     <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+               </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+               <h3 class="text-white text-lg font-semibold border-b border-white/10 pb-3 mb-6">
+                  Quick Links
+               </h3>
+
+               <ul class="space-y-4">
+                  <li><a href="#" class="footer-link">News</a></li>
+                  <li><a href="#" class="footer-link">History</a></li>
+                  <li><a href="#" class="footer-link">Community</a></li>
+                  <li><a href="#" class="footer-link">Portfolio</a></li>
+               </ul>
+            </div>
+
+            <!-- Information -->
+            <div>
+               <h3 class="text-white text-lg font-semibold border-b border-white/10 pb-3 mb-6">
+                  Information
+               </h3>
+
+               <ul class="space-y-4">
+                  <li><a href="#" class="footer-link">Help & Contact</a></li>
+                  <li><a href="#" class="footer-link">Shipping & Taxes</a></li>
+                  <li><a href="#" class="footer-link">Search Terms</a></li>
+                  <li><a href="#" class="footer-link">Affiliates</a></li>
+               </ul>
+            </div>
+
+            <!-- My Account -->
+            <div>
+               <h3 class="text-white text-lg font-semibold border-b border-white/10 pb-3 mb-6">
+                  My Account
+               </h3>
+
+               <ul class="space-y-4">
+                  <li><a href="#" class="footer-link">My Account</a></li>
+                  <li><a href="#" class="footer-link">Order History</a></li>
+                  <li><a href="#" class="footer-link">Wishlist</a></li>
+                  <li><a href="#" class="footer-link">Privacy Policy</a></li>
+               </ul>
+            </div>
+
+         </div>
+      </div>
+   </footer>
+   <!-- Footer End -->
+
+   <!-- Footer Bar -->
+   <section class="bg-[#191919] text-fooText font-DmSans">
+      <div class="max-w-7xl mx-auto flex items-center lg:justify-between justify-center gap-4 py-6 flex-wrap">
+         <p>© 2026 Smartshop is Powered by Chitrakoot Web</p>
+         <div class="flex items-center gap-2">
+            <img src="../image/app-01.png" alt="appleStore">
+            <img src="../image/app-02.png" alt="GooglePlay">
+            <img src="../image/app-03.png" alt="microsoft">
+         </div>
+         <div class="flex items-center gap-2">
+            <img src="../image/visa.png" alt="visaImage">
+            <img src="../image/mastercard.png" alt="mastercardImage">
+            <img src="../image/paypal.png" alt="PaypalCard">
+            <img src="../image/amex.png" alt="amexImage">
+            <img src="../image/discover.png" alt="dsicoverImage">
+            <img src="../image/jcb.png" alt="jcbImage">
+         </div>
+      </div>
+   </section>
+   <!-- Footer End -->
+
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <!-- Featured Script -->
+   <script>
+      const openBtn = document.getElementById('openSidebar');
+      const closeBtn = document.getElementById('closeSidebar');
+      const sidebar = document.getElementById('offCanvasSidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      function openCanvas() {
+         sidebar.classList.remove('-translate-x-full');
+         overlay.classList.remove('hidden');
+      }
+
+      function closeCanvas() {
+         sidebar.classList.add('-translate-x-full');
+         overlay.classList.add('hidden');
+      }
+
+      openBtn.addEventListener('click', openCanvas);
+      closeBtn.addEventListener('click', closeCanvas);
+      overlay.addEventListener('click', closeCanvas);
+   </script>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", () => {
+         const counters = document.querySelectorAll(".counter");
+         const speed = 200;
+
+         const animateCounter = (counter) => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const inc = target / speed;
+
+            const updateCount = () => {
+               count += inc;
+               if (count < target) {
+                  counter.innerText = Math.ceil(count);
+                  setTimeout(updateCount, 15);
+               } else {
+                  counter.innerText = target;
+               }
+            };
+
+            updateCount();
+         };
+
+         const observer = new IntersectionObserver(
+            (entries, observer) => {
+               entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                     animateCounter(entry.target);
+                     observer.unobserve(entry.target);
+                  }
+               });
+            },
+            { threshold: 0.5 }
+         );
+
+         counters.forEach((counter) => observer.observe(counter));
+      });
+   </script>
+</body>
+
+</html>
