@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>smartShop | web</title>
+   <!-- Swiper JS CDN Link -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <!-- Bootstrap Icons Link-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <!-- Tailwind CSS Link -->
+   <link rel="stylesheet" href="../src/output.css">
+   <!-- FontAwesome Icons CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+   <!-- 404 Error Page -->
+   <section class="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-start py-12 px-4"
+      style="background-image: url('../image/bg-1.jpg');">
+      <div class="text-center lg:ml-60 space-y-8">
+
+         <!-- Title -->
+         <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 tracking-tight">
+            We're Launching Soon!
+         </h1>
+
+         <!-- Countdown Timer -->
+         <div class="grid grid-cols-4 gap-3 md:gap-4 max-w-md">
+            <div class="bg-white/90 backdrop-blur-sm shadow-md rounded-xl p-3 md:p-4 text-center">
+               <span id="days" class="block text-2xl md:text-3xl font-bold text-gray-800">00</span>
+               <span class="text-xs md:text-sm text-gray-500 font-medium">Days</span>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm shadow-md rounded-xl p-3 md:p-4 text-center">
+               <span id="hours" class="block text-2xl md:text-3xl font-bold text-gray-800">00</span>
+               <span class="text-xs md:text-sm text-gray-500 font-medium">Hours</span>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm shadow-md rounded-xl p-3 md:p-4 text-center">
+               <span id="minutes" class="block text-2xl md:text-3xl font-bold text-gray-800">00</span>
+               <span class="text-xs md:text-sm text-gray-500 font-medium">Minutes</span>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm shadow-md rounded-xl p-3 md:p-4 text-center">
+               <span id="seconds" class="block text-2xl md:text-3xl font-bold text-gray-800">00</span>
+               <span class="text-xs md:text-sm text-gray-500 font-medium">Seconds</span>
+            </div>
+         </div>
+
+         <!-- Email Input Form -->
+         <form onsubmit="event.preventDefault();"
+            class="flex items-center shadow-md rounded-lg overflow-hidden max-w-md border border-gray-200">
+            <input type="email" placeholder="Notify me on this email"
+               class="w-full px-4 py-3 bg-white text-gray-700 outline-none text-sm focus:ring-2 focus:ring-sky-400"
+               required />
+            <button type="submit"
+               class="bg-activeColor hover:text-activeColor rounded-br-lg rounded-tl-lg hover:bg-transparent border-2 border-activeColor text-white font-semibold px-6 py-3 text-sm transition-colors duration-200">
+               Submit
+            </button>
+         </form>
+
+         <!-- Social Links -->
+         <div class="flex items-center justify-center md:justify-start space-x-3 text-gray-600">
+            <a href="#"
+               class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 hover:border-sky-500 hover:text-sky-500 transition-colors">
+               <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#"
+               class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 hover:border-sky-500 hover:text-sky-500 transition-colors">
+               <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="#"
+               class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 hover:border-sky-500 hover:text-sky-500 transition-colors">
+               <i class="fas font-semibold text-sm">d</i>
+            </a>
+            <a href="#"
+               class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 hover:border-sky-500 hover:text-sky-500 transition-colors">
+               <i class="fab fa-youtube text-sm"></i>
+            </a>
+            <a href="#"
+               class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 hover:border-sky-500 hover:text-sky-500 transition-colors">
+               <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- Countdown JavaScript Code -->
+   <script>
+      // Launching date setup (30 days from now)
+      const targetDate = new Date().getTime() + (30 * 24 * 60 * 60 * 1000);
+
+      const updateCountdown = () => {
+         const now = new Date().getTime();
+         const difference = targetDate - now;
+
+         if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+         }
+      };
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+   </script>
+   <!-- 404 Error End -->
+</body>
+
+</html>
